@@ -1,5 +1,6 @@
 import React from "react";
 import useFetchMovieGenreResults from "../hooks/useFetchMovieGenreResults";
+import useSelectedGenreInfoExtractor from "../hooks/useSelectedGenreInfoExtractor";
 
 export default function Moviegenreresults({ genre, id }) {
   const myobjecthopefully = useFetchMovieGenreResults(genre);

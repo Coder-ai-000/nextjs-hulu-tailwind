@@ -1,19 +1,10 @@
 import React from "react";
-import Moviegenreresults from "../components/Moviegenreresults";
 import useFetchNavBarCatagories from "./useFetchNavBarCatagories";
-import useSelectedGenreInfoExtractor from "./useSelectedGenreInfoExtractor";
-import { useEffect, useState } from "react";
 
-//! Make a note below that hooks take in like functions, what is taken in is an argument, not a prop (whitch components take in and may need to be deconstructed for easy use)
-
-export default function useFetchMovieGenreResults(genre) {
-  const [mymoviegenreinfo, setMymoviegenreinfo] = useState({});
-
+export default function useSelectedGenreInfoExtractor(genre) {
   console.log("Checking if its reading", genre);
 
   const mymoviegenreobjects = useFetchNavBarCatagories();
-  // setMymoviegenreinfo(mymoviegenreobjects);
-  console.log(mymoviegenreinfo);
 
   if (mymoviegenreobjects.genres.length > 0) {
     console.log(
@@ -67,26 +58,8 @@ export default function useFetchMovieGenreResults(genre) {
     );
 
     console.log("This is avangers two ID", filtteredarray[0].id);
+    console.log("This is avangers two name name", filtteredarray[0].name);
 
-    //   useEffect(() => {
-    //     async function APIrequests() {
-    //       //if function in here for trending and popular vs genre search
-    //       const response = await fetch(
-    //         `https://api.themoviedb.org/3/discover/movie?api_key=f70b3ca617a5d8978429e375c55a4fa2&language=en-US&with_genres=${filtteredarray[0].id}`
-    //       );
-    //       const movies = await response.json();
-    //       await setMymoviegenreinfo(movies);
-    //       await console.log(movies);
-
-    //       return mymoviesfetched; //!! Does not work here (always gives you the state before the one you clicked) because does API requests has async functions and does not return intime for the console to log anything
-    //     }
-
-    //     APIrequests();
-    //   }, [filtteredarray[0].id]);
-    // }
-
-    // if (mymoviegenreinfo !== undefined) {
-
-    return mymoviegenreinfo;
+    return filtteredarray;
   }
 }
