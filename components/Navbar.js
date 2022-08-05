@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <div className="flex px-10 sm:px-20 text-2xl whitespace-nowrap space-x-10 sm:space-x-20 overflow-x-scroll scrollbar-hide  hover:text-white active:text-red-500">
-      {myfetchedgenres.genres.map((elem) => (
+      {myfetchedgenres?.genres.map((elem) => (
         <Link href={`${elem.name}`}>
           <div>
             <h2

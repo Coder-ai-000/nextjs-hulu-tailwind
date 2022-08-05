@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 
 export default function useFetchNavBarCatagories() {
-  const [navgenres, setnavgenres] = useState({ genres: [] });
+  const [navgenres, setnavgenres] = useState();
 
   useEffect(() => {
     async function APIfetch() {
@@ -23,7 +23,7 @@ export default function useFetchNavBarCatagories() {
 
   //   console.log(navgenres.keys());
 
-  const mystatecheck = navgenres.genres.map((elem) => console.log(elem));
+  // const mystatecheck = navgenres?.genres?.map((elem) => console.log(elem));
 
   //! Can also do like the below using Object.entires - makes it easier so you dont have to deep dive into the particular name of the expected object. You can just check the entires in your highest level wrapper object
   //   const result = Object.entries(navgenres).map(([key, value]) => {
