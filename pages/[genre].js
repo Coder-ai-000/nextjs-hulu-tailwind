@@ -22,7 +22,9 @@ export default function genre() {
 
   const mymovies = useFetchMovieGenreResults(genre);
 
-  console.log("WATTTARY WATTERY", mymovies);
+  console.log("Check if the movies returned are different", mymovies);
+
+  console.log("My genre selected is", genre);
   // }
 
   return (

@@ -8,9 +8,11 @@ import { useEffect, useState } from "react";
 
 export default function useFetchMovieGenreResults(genre) {
   const [mymoviegenreinfo, setMymoviegenreinfo] = useState();
+
   const [mymoviegenreinfofinal, setMymoviegenreinfofinal] = useState();
   const [allmoviespartofselectedgenre, setAllmoviespartofselectedgenre] =
     useState();
+  // const [mypassedingenre, setMypassedingenre] = useState();
 
   const mymoviegenreobjects = useFetchNavBarCatagories();
 
@@ -38,7 +40,7 @@ export default function useFetchMovieGenreResults(genre) {
       console.log("Finally flat", flatarrayofvalues);
 
       const filtteredarray = flatarrayofvalues.filter(
-        (character) => character.name === genre
+        (placeholder) => placeholder.name === genre
       );
 
       console.log("This is avangers two ID", filtteredarray[0].id);
@@ -52,10 +54,13 @@ export default function useFetchMovieGenreResults(genre) {
 
       // return mymoviegenreinfo;
     }
-  }, [mymoviegenreinfo]);
+  }, [mymoviegenreinfo, genre]);
 
   useEffect(() => {
-    console.log("THIS IS ME TESTING MY THIRD", mymoviegenreinfofinal);
+    console.log(
+      "THIS IS ME TESTING MY THIRD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      mymoviegenreinfofinal
+    );
   }, [mymoviegenreinfofinal]);
 
   useEffect(() => {
