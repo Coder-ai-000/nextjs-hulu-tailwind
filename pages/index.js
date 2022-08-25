@@ -22,9 +22,13 @@ export default function Home() {
       </Head>
       {/* what we need to build */}
       {/* Header component */}
-      <Header />
+
+      {/* Dont need Header anymore because using the Layout Component to wrap everything */}
+      {/* <Header /> */}
       {/* Nav component */}
-      <Navbar />
+
+      {/* Dont need NavBar anymore because using the Layout Component to wrap everything */}
+      {/* <Navbar /> */}
       {/* Result component */}
 
       <h1 className="text-3xl font-bold underline">Hello world!</h1>

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import {
   HomeIcon,
@@ -22,12 +23,17 @@ export default function Header() {
         <Headeritem title="SEARCH" Icon={SearchIcon} />
         <Headeritem title="ACCOUNT" Icon={UserIcon} />
       </div>
-      <Image
-        className="object-contain"
-        src="https://links.papareact.com/ua6"
-        width={200}
-        height={100}
-      />
+      <Link href="/">
+        <a>
+          <Image
+            className="object-contain"
+            src="https://links.papareact.com/ua6"
+            width={200}
+            height={100}
+            href="http://localhost:3000/"
+          />
+        </a>
+      </Link>
     </header>
   );
 }

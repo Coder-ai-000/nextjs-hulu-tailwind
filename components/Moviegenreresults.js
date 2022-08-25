@@ -1,31 +1,26 @@
-import { object } from "joi";
-import { isArray } from "lodash";
 import React from "react";
-import useFetchMovieGenreResults from "../hooks/useFetchMovieGenreResults";
-import useSelectedGenreInfoExtractor from "../hooks/useSelectedGenreInfoExtractor";
 import Thumbnail from "./Thumbnail";
 
 export default function Moviegenreresults({ movies }) {
-  // const myobjecthopefully = useFetchMovieGenreResults(genre);
-
   console.log("ARRRRRRRRRRRRRRRRIGAAAAAAAAATOOOOOOOOOO", movies);
 
   if (movies !== undefined) {
     var mappedvalues = Object.keys(movies).map((e) => movies[e]);
 
+    console.log("This is my mapped values....................", mappedvalues);
+
     const flatarrayofvalues = mappedvalues.flat();
     console.log("Finally flat", flatarrayofvalues);
 
     const filtteredarray = flatarrayofvalues.filter(
-      (character) => character.poster_path == true
+      (movie) => movie.poster_path == true
     );
-
-    console.log(filtteredarray, "HURRRAH");
 
     console.log("Gondabonda", movies.results);
 
-    movies.results.map((movie) => console.log("Jello"));
+    // movies.results.map((movie) => console.log(movie.name));
 
+    //Can deconstruct results from movies object because movies is the object
     const { results } = movies;
     console.log("naga", results);
   }

@@ -1,9 +1,12 @@
 import React from "react";
 import useFetchNavBarCatagories from "../hooks/useFetchNavBarCatagories";
 import Link from "next/link";
-
+import useFetchTrendingCatagory from "../hooks/useFetchTrendingCatagory";
+import useFetchTopRatedCatagory from "../hooks/useFetchTopRatedCatagory";
 export default function Navbar() {
   const myfetchedgenres = useFetchNavBarCatagories();
+  // const mychecker = useFetchTopRatedCatagory();
+  const mychekertwo = useFetchTrendingCatagory();
 
   console.log("This is me checking my nav page", myfetchedgenres);
 

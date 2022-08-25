@@ -1,0 +1,7 @@
+You need useFetchTrending and useFetchCatagory
+ because they are not genres, they are catagories and 
+ your genere fetch only fetches genres.
+  Neither are they part of one bucket called catagories on the API side
+  linke genres is.
+ Thats why they have a different
+ API Links. 

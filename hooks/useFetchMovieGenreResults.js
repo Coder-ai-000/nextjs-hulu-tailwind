@@ -1,7 +1,5 @@
 import React from "react";
-import Moviegenreresults from "../components/Moviegenreresults";
 import useFetchNavBarCatagories from "./useFetchNavBarCatagories";
-import useSelectedGenreInfoExtractor from "./useSelectedGenreInfoExtractor";
 import { useEffect, useState } from "react";
 
 //! Make a note below that hooks take in like functions, what is taken in is an argument, not a prop (whitch components take in and may need to be deconstructed for easy use)
