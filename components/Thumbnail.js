@@ -2,6 +2,7 @@ import { result } from "lodash";
 import React from "react";
 import Image from "next/dist/client/image";
 import { ThumbUpIcon } from "@heroicons/react/outline";
+import Movieprofile from "./Movieprofile";
 
 export default function Thumbnail({ movie }) {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
@@ -38,4 +39,6 @@ export default function Thumbnail({ movie }) {
       </div>
     </div>
   );
+
+  return <Movieprofile selectedmovie={movie} />;
 }
