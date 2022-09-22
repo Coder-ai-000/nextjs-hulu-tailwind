@@ -1,15 +1,15 @@
 import React from "react";
 import { useRouter } from "next/router";
-import useFetchMovieGenreResults from "../hooks/useFetchMovieGenreResults";
-import Moviegenreresults from "../components/Moviegenreresults";
-import useSelectedGenreInfoExtractor from "../hooks/useSelectedGenreInfoExtractor";
+import useSelectedGenreInfoExtractor from "../../hooks/useSelectedGenreInfoExtractor";
 import { useState } from "react";
 import { useEffect } from "react";
-import Navbar from "../components/Navbar";
-import useFetchTrendingCatagory from "../hooks/useFetchTrendingCatagory";
-import useFetchTopRatedCatagory from "../hooks/useFetchTopRatedCatagory";
+import Navbar from "../../components/Navbar";
+import useFetchTrendingCatagory from "../../hooks/useFetchTrendingCatagory";
+import useFetchTopRatedCatagory from "../../hooks/useFetchTopRatedCatagory";
+import useFetchMovieGenreResults from "../../hooks/useFetchMovieGenreResults";
+import Moviegenreresults from "../../components/Moviegenreresults";
 
-export default function genre() {
+function genre() {
   const [myresultsfromhook, setMyresultsfromhook] = useState();
   const [myreturnedmovies, setMyreturnedmovies] = useState();
 
@@ -51,28 +51,6 @@ export default function genre() {
       </div>
     );
   }
-
-  // else{
-
-  ///! Maybe use usestate?
-
-  // console.log("LAASATSYAGSYAGHSIA", myresultsfromhook);
-
-  // console.log("This is the genre from the genre page", genre);
-
-  // const mymovies = useFetchMovieGenreResults(genre);
-
-  // setMyreturnedmovies(mymovies);
-
-  // console.log("Check if the movies returned are different", mymovies);
-
-  // console.log("My genre selected is", genre);
-
-  // return (
-  //   <div>
-  //     {/* <Navbar /> */}
-  //     <div>{genre}</div>
-  //     <Moviegenreresults movies={mymovies} />
-  //   </div>
-  // );
 }
+
+export default genre();

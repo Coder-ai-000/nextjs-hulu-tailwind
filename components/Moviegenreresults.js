@@ -1,5 +1,6 @@
 import React from "react";
 import Thumbnail from "./Thumbnail";
+import Link from "next/link";
 
 export default function Moviegenreresults({ movies }) {
   console.log("ARRRRRRRRRRRRRRRRIGAAAAAAAAATOOOOOOOOOO", movies);
@@ -29,7 +30,7 @@ export default function Moviegenreresults({ movies }) {
     <div className="px-5 my-10 sm:grid md:grid-cols-2 xl:grid-cols-3 3xl:flex flex-wrap justify-center">
       {/* PUT IT IN */}
       {movies?.results?.map((movie) => (
-        <div>
+        <div key={movie.title}>
           <Thumbnail movie={movie} />
         </div>
       ))}

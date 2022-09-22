@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import styles from "../styles/Home.module.css";
@@ -22,17 +23,14 @@ export default function Home() {
       </Head>
       {/* what we need to build */}
       {/* Header component */}
-
+      <Link href="/api/auth/login">Login</Link>
       {/* Dont need Header anymore because using the Layout Component to wrap everything */}
       {/* <Header /> */}
       {/* Nav component */}
-
       {/* Dont need NavBar anymore because using the Layout Component to wrap everything */}
       {/* <Navbar /> */}
       {/* Result component */}
-
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
-
       <br></br>
       {/* {footer - built in page but better to build it as component and import on page [or use layouts] that way can reuse on other pages} */}
       <footer className={styles.footer}>

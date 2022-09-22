@@ -1,0 +1,45 @@
+import React from "react";
+import { useRouter } from "next/router";
+import useSelectedGenreInfoExtractor from "../../hooks/useSelectedGenreInfoExtractor";
+import { useState } from "react";
+import { useEffect } from "react";
+import Navbar from "../../components/Navbar";
+import useFetchTrendingCatagory from "../../hooks/useFetchTrendingCatagory";
+import useFetchTopRatedCatagory from "../../hooks/useFetchTopRatedCatagory";
+import useFetchMovieGenreResults from "../../hooks/useFetchMovieGenreResults";
+import Moviegenreresults from "../../components/Moviegenreresults";
+
+function genre(props) {
+  const [myresultsfromhook, setMyresultsfromhook] = useState();
+  const [myreturnedmovies, setMyreturnedmovies] = useState();
+
+  const router = useRouter();
+  const { genre } = router.query;
+
+  console.log("OLLLAAAYYY OLLLLAYYY &&&&&&&&&&&", props);
+
+  return (
+    <div>
+      {/* <Navbar /> */}
+      {/* <div>{genre}</div> */}
+      {/* <Moviegenreresults movies={props} /> */}
+    </div>
+  );
+}
+
+export default genre();
+
+export async function getServerSideProps(context) {
+  if (context.params.genre == "Trending") {
+    let mymovies = useFetchTrendingCatagory();
+    return {
+      props: {
+        results: mymovies.results,
+      },
+    };
+  } else if (context.params.genr == "Top Rated") {
+    let mymovies = useFetchTopRatedCatagory();
+  } else {
+    let mymovies = useFetchMovieGenreResults(genre);
+  }
+}

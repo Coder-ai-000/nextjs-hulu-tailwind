@@ -3,7 +3,7 @@ import useFetchNavBarCatagories from "../hooks/useFetchNavBarCatagories";
 import Link from "next/link";
 import useFetchTrendingCatagory from "../hooks/useFetchTrendingCatagory";
 import useFetchTopRatedCatagory from "../hooks/useFetchTopRatedCatagory";
-export default function Navbar() {
+export default function NavbarSSR() {
   const myfetchedgenres = useFetchNavBarCatagories();
   // const mychecker = useFetchTopRatedCatagory();
   const mychekertwo = useFetchTrendingCatagory();
@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <div className="flex px-10 sm:px-20 text-2xl whitespace-nowrap space-x-10 sm:space-x-20 overflow-x-scroll scrollbar-hide  hover:text-white active:text-red-500">
       {myfetchedgenres?.genres.map((elem) => (
-        <Link href={`/genre/${elem.name}`} key={elem.name}>
+        <Link href={`/SSR/${elem.name}`} key={elem.name}>
           <div>
             <h2
               key={elem.name}
